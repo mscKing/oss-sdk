@@ -1,9 +1,6 @@
 package com.wecarry.oss.common.model;
 
 import com.wecarry.oss.common.constant.AccessControlEnum;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,11 +11,9 @@ import java.util.Date;
  * @author miaosc
  * @date 11/2/2019
  */
-@Setter
-@Getter
-@ToString
 public class StorageBucket implements Serializable {
 
+    private static final long serialVersionUID = 5869550542793961404L;
     /**
      * bucket名称
      */
@@ -43,4 +38,44 @@ public class StorageBucket implements Serializable {
      * 更新时间
      */
     private Date updateTime;
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public AccessControlEnum getAccessControl() {
+        return accessControl;
+    }
+
+    public void setAccessControl(AccessControlEnum accessControl) {
+        this.accessControl = accessControl;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 }

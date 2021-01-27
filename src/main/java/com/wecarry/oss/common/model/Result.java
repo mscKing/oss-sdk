@@ -1,16 +1,11 @@
 package com.wecarry.oss.common.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * http响应结果
  *
  * @author miaosc
  * @date 10/22/2019
  */
-@Setter
-@Getter
 public class Result<T> {
 
     /**
@@ -74,4 +69,27 @@ public class Result<T> {
         return new Result<>(message, code, data);
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 }

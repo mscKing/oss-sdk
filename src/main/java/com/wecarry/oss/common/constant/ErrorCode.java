@@ -1,14 +1,12 @@
 package com.wecarry.oss.common.constant;
 
-import lombok.Getter;
-
 /**
  * 通用错误码枚举
  *
  * @author miaosc
  * @date 10/22/2019
  */
-@Getter
+
 public enum ErrorCode {
 
     /**
@@ -50,5 +48,13 @@ public enum ErrorCode {
     ErrorCode(int code, String description) {
         this.code = code;
         this.description = description;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
