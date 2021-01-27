@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+#本机
+wecarry:
+  oss:
+    app-key: test001Key
+    app-secret: test001Secret
+    host: http://localhost:80
+
+#线上
+#wecarry:
+#  oss:
+#    app-key: test11
+#    app-secret: 123456789012345678901234567890123
+#    host: http://139.186.73.65
+
