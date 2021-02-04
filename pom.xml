@@ -28,12 +28,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <scm>
-        <tag>main</tag>
-        <url>git@github.com:cloudnil/marathon-client.git</url>
-        <connection>scm:git:git@github.com:cloudnil/marathon-client.git</connection>
-        <developerConnection>scm:git:git@github.com:cloudnil/marathon-client.git</developerConnection>
-    </scm>
+
     <developers>
         <developer>
             <name>miao.shanchuan</name>
@@ -169,11 +164,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>oss</id>
+            <id>central</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>oss</id>
+            <id>central</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
