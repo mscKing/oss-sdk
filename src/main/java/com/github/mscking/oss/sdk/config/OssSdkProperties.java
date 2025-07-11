@@ -32,9 +32,15 @@ public class OssSdkProperties {
     private String appSecret;
 
     /**
-     * SDK API调用的访问地址, eg: http:localhost:8090
+     * SDK API调用的访问地址, eg: http://localhost:8090
      */
     private String host = DEFAULT_HOST;
+
+    /**
+     * 文件外部访问地址, eg: http://oss.baidu.com
+     * 没有就使用host
+     */
+    private String domain;
 
     public String getAppKey() {
         return appKey;
@@ -58,5 +64,13 @@ public class OssSdkProperties {
 
     public void setHost(String host) {
         this.host = host;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 }

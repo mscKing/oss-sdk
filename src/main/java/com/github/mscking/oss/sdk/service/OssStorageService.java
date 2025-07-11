@@ -128,7 +128,7 @@ public interface OssStorageService {
 
 
     /**
-     * 给url带上访问的签名参数,注意签名是有时效的,{@link CommonConstant#SIGN_VALID_PERIOD}
+     * url后面的签名参数,注意签名是有时效的,{@link CommonConstant#SIGN_VALID_PERIOD}
      *
      * @param bucketName 桶名称
      * @param fileId     文件id

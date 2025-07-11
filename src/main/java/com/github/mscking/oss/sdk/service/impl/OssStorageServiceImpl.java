@@ -28,6 +28,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +46,16 @@ public class OssStorageServiceImpl implements OssStorageService {
 
     private StorageClient proxy;
 
+    /**
+     * 接口访问地址
+     */
     private String host;
+
+
+    /**
+     * 对外访问的域名
+     */
+    private String domain;
 
     private HmacUtil hmacUtil;
 
@@ -197,6 +207,14 @@ public class OssStorageServiceImpl implements OssStorageService {
     }
 
 
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public void setHmacUtil(HmacUtil hmacUtil) {
         this.hmacUtil = hmacUtil;
     }
@@ -324,7 +342,7 @@ public class OssStorageServiceImpl implements OssStorageService {
 
     private String createUrl(String bucketName, String fileId) {
         String uri = String.format(OssParamConstant.OSS_URI_FORMAT, bucketName, fileId);
-        return String.format("%s%s", host, uri);
+        return StringUtils.hasText(domain) ? String.format("%s%s", domain, uri) : String.format("%s%s", host, uri);
     }
 
     /**

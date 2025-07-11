@@ -50,6 +50,7 @@ public class OssSdkConfig {
         ossStorageServiceImpl .setHmacUtil(HmacUtil.buildHmacSHA1(ossSdkProperties.getAppSecret()));
         ossStorageServiceImpl .setHttpClient(httpClientBuilder().build());
         ossStorageServiceImpl .setHost(ossSdkProperties.getHost());
+        ossStorageServiceImpl .setDomain(ossSdkProperties.getDomain());
         return ossStorageServiceImpl;
     }
 
