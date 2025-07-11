@@ -14,6 +14,7 @@ import com.github.mscking.oss.rpc.model.FileReadRequest;
 import com.github.mscking.oss.rpc.model.FileWriteRequest;
 import com.github.mscking.oss.rpc.util.ParamSignUtil;
 import com.github.mscking.oss.sdk.service.OssStorageService;
+import jakarta.activation.DataHandler;
 import org.apache.cxf.attachment.AttachmentDataSource;
 import org.apache.cxf.attachment.ByteDataSource;
 import org.apache.http.HttpEntity;
@@ -28,7 +29,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
-import javax.activation.DataHandler;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -183,9 +183,6 @@ public class OssStorageServiceImpl implements OssStorageService {
         return proxy.countBucketFiles(bucketName);
     }
 
-    public StorageClient getProxy() {
-        return proxy;
-    }
 
     public void setProxy(StorageClient proxy) {
         this.proxy = proxy;
@@ -199,17 +196,11 @@ public class OssStorageServiceImpl implements OssStorageService {
         this.host = host;
     }
 
-    public HmacUtil getHmacUtil() {
-        return hmacUtil;
-    }
 
     public void setHmacUtil(HmacUtil hmacUtil) {
         this.hmacUtil = hmacUtil;
     }
 
-    public CloseableHttpClient getHttpClient() {
-        return httpClient;
-    }
 
     public void setHttpClient(CloseableHttpClient httpClient) {
         this.httpClient = httpClient;
@@ -333,7 +324,7 @@ public class OssStorageServiceImpl implements OssStorageService {
 
     private String createUrl(String bucketName, String fileId) {
         String uri = String.format(OssParamConstant.OSS_URI_FORMAT, bucketName, fileId);
-        return String.format("%s%s?%s", host, uri, buildSignParam(bucketName, fileId));
+        return String.format("%s%s", host, uri);
     }
 
     /**

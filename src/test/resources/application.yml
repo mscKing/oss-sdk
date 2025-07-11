@@ -4,8 +4,8 @@ server:
 #本机
 wecarry:
   oss:
-    app-key: test001Key
-    app-secret: test001Secret
-    host: http://localhost:80
+    app-key: test002Key
+    app-secret: test002Secret
+    host: http://127.0.0.1:80
 
 

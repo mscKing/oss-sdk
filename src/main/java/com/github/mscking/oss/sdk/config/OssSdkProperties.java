@@ -1,9 +1,9 @@
 package com.github.mscking.oss.sdk.config;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
 
 /**
  * @author miaosc

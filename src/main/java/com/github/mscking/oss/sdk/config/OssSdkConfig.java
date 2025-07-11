@@ -6,7 +6,12 @@ import com.github.mscking.oss.sdk.auth.CertificateInjectInterceptor;
 import com.github.mscking.oss.sdk.service.OssStorageService;
 import com.github.mscking.oss.sdk.service.impl.OssStorageServiceImpl;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,9 +55,14 @@ public class OssSdkConfig {
 
 
     private HttpClientConnectionManager poolingConnectionManager() {
-        PoolingHttpClientConnectionManager poolingConnectionManager = new PoolingHttpClientConnectionManager();
+        // 支持HTTP、HTTPS
+        Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory> create()
+                .register("http", PlainConnectionSocketFactory.getSocketFactory())
+                .register("https", SSLConnectionSocketFactory.getSocketFactory())
+                .build();
+        PoolingHttpClientConnectionManager poolingConnectionManager = new PoolingHttpClientConnectionManager(registry);
         // 连接池最大连接数
-        poolingConnectionManager.setMaxTotal(1000);
+        poolingConnectionManager.setMaxTotal(10000);
         // 每个主机的并发
         poolingConnectionManager.setDefaultMaxPerRoute(200);
         return poolingConnectionManager;

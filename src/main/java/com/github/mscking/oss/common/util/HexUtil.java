@@ -1,6 +1,7 @@
 package com.github.mscking.oss.common.util;
 
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
+
+import jakarta.xml.bind.annotation.adapters.HexBinaryAdapter;
 
 /**
  * 16进制字符串工具

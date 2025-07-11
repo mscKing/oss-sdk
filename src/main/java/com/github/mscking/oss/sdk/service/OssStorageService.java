@@ -9,8 +9,8 @@ import com.github.mscking.oss.common.model.StorageBucket;
 import com.github.mscking.oss.rpc.model.FileOperationRequest;
 import com.github.mscking.oss.rpc.model.FileReadRequest;
 import com.github.mscking.oss.rpc.model.FileWriteRequest;
+import jakarta.jws.WebParam;
 
-import javax.jws.WebParam;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;

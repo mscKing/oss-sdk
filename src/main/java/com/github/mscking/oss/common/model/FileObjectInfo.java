@@ -42,11 +42,6 @@ public class FileObjectInfo implements Serializable {
     private Long size;
 
     /**
-     * 访问的url,如果文件所属桶不能公共读,则需要在url后面带上签名等参数
-     */
-    private String url;
-
-    /**
      * 创建时间
      */
     private Date createTime;
@@ -102,14 +97,6 @@ public class FileObjectInfo implements Serializable {
 
     public void setSize(Long size) {
         this.size = size;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     public Date getCreateTime() {
