@@ -7,5 +7,6 @@ wecarry:
     app-key: test002Key
     app-secret: test002Secret
     host: http://127.0.0.1:80
+    domain: http://127.0.0.1
 
 
