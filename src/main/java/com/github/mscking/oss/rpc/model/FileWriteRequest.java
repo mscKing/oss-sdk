@@ -12,6 +12,13 @@ public class FileWriteRequest extends FileOperationRequest {
      */
     private long offset;
 
+    public FileWriteRequest(String bucketName, String fileId) {
+        super(bucketName, fileId);
+    }
+
+    public FileWriteRequest() {
+    }
+
     public long getOffset() {
         return offset;
     }

@@ -12,7 +12,7 @@ public class FileObjectInfo implements Serializable {
 
     private static final long serialVersionUID = -8429981279298936626L;
     /**
-     * 文件id
+     * 文件唯一id
      */
     private String fileId;
 
@@ -27,7 +27,7 @@ public class FileObjectInfo implements Serializable {
     private String bucketName;
 
     /**
-     * 重新生成的文件名称
+     * 原来的文件名称
      */
     private String fileName;
 

@@ -18,6 +18,14 @@ public class FileOperationRequest implements Serializable{
      */
     protected String fileId;
 
+    public FileOperationRequest(String bucketName, String fileId) {
+        this.bucketName = bucketName;
+        this.fileId = fileId;
+    }
+
+    public FileOperationRequest() {
+    }
+
     public String getBucketName() {
         return bucketName;
     }

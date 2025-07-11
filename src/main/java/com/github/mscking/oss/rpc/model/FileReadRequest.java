@@ -18,6 +18,13 @@ public class FileReadRequest extends FileOperationRequest {
      */
     private long length = READ_TO_END;
 
+    public FileReadRequest(String bucketName, String fileId) {
+        super(bucketName, fileId);
+    }
+
+    public FileReadRequest() {
+    }
+
     public long getOffset() {
         return offset;
     }
