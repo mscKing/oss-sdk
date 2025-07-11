@@ -30,9 +30,14 @@
 
     <developers>
         <developer>
-            <name>miao.shanchuan</name>
+            <id>mscKing</id>
+            <name>miaoShanchuan</name>
             <email>mym1227@sina.com</email>
             <organization>xolinker</organization>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+            </roles>
         </developer>
     </developers>
 
@@ -119,6 +124,17 @@
             <build>
                 <plugins>
 
+                    <!--   central发布插件    -->
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.8.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>mscKing</publishingServerId>
+                        </configuration>
+                    </plugin>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
@@ -170,6 +186,7 @@
                         <version>1.6</version>
                         <executions>
                             <execution>
+                                <id>sign-artifacts</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
